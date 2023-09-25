@@ -22,10 +22,10 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'categorie_id' => ['required', 'integer', 'exists:categories,id'],
             'name' => ['required', 'string', 'max:255'],
-            'desc' => ['nullable', 'string', 'max:255'],
+            'desc' => ['nullable', 'string'],
             'price' => ['required', 'numeric'],
-            'shop_id' => ['required', 'integer', 'exists:shops,id'],
             'active' => ['required', 'integer', 'in:0,1'],
         ];
     }

@@ -25,7 +25,9 @@ class StoreContactuRequest extends FormRequest
     {
         return [
             'name'    => ['required', 'min:3', 'max:255'],
-             'is_active' => ['integer', 'in:0,1'],
+            'email' => ['required', 'email'],
+            'phone' => ['required', 'numeric', new PhoneRule()],
+             'active' => ['integer', 'in:0,1'],
         ];
     }
 }

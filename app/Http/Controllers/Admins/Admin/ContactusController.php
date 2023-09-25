@@ -30,15 +30,8 @@ class ContactusController extends Controller
     public function store(StoreContactuRequest $request)
     {
         try {
-            if ($request->has('image')) {
-                $picture = setStorage('blog', $request->image);
-                $data = array_merge($request->validated(), [
-                    'picture' => $picture,
-                ]);
-            } else {
-                $data = $request->validated();
-            }
 
+                $data = $request->validated();
             if (Contacut::create($data)) {
                 return successMessage('Create Contactu Successfuly');
             } else {
@@ -66,29 +59,18 @@ class ContactusController extends Controller
 
     public function update(StoreContactuRequest $request, Contacut $Contactu)
     {
-        try {
-            if ($request->has('image')) {
-                deleteStorage($Contactu->picture);
-                $picture = setStorage('user', $request->image);
-                $data = array_merge($request->validated(), [
-                    'picture' => $picture,
-                ]);
-            } else {
+        // try {
+
                 $data = $request->validated();
-            }
-            if ($request->password != null) {
-                $data['password'] = bcrypt($request->password);
-            }
             if ($Contactu->update($data)) {
-                return to_route('Contactus.index')->with('message', ['type' => 'success', 'text' => 'Update Contactu Successfuly']);
+                return to_route('Contactu.index')->with('message', ['type' => 'success', 'text' => 'Update Contactu Successfuly']);
             } else {
-                deleteStorage("user/$picture");
 
                 return errorMessage('Update Contactu has not be completed');
             }
-        } catch (Exception $e) {
-            return handleErrors($e);
-        }
+        // } catch (Exception $e) {
+        //     return handleErrors($e);
+        // }
     }
 
     public function destroy(Contacut $Contactu)

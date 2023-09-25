@@ -12,7 +12,7 @@
                 @method('patch')
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
-                        <x-inputs.select-input label="Blog" name="Blog_id" :items="$Blogs" :value="$product->Blog_id"/>
+                        <x-inputs.select-input label="Catgry" name="categorie_id" :items="$Catgry" :value="$product->categorie_id"/>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <x-inputs.text-input label="Name" name="name" :value="$product->name" />

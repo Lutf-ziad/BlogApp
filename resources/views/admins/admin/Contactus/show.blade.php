@@ -15,7 +15,10 @@
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>{{__("Name")}}</th><td>{{$Contactu->name}}</td>
-                    </tr>\
+                    </tr>
+                    <tr>
+                        <th>{{__("Name")}}</th><td>{{$Contactu->phone}}</td>
+                    </tr>
                     <tr>
                         <th>{{__("email")}}</th><td>{{$Contactu->email}}</td>
                     </tr>
@@ -23,7 +26,7 @@
                         <th>{{__("Describe")}}</th><td>{{$Contactu->desc}}</td>
                     </tr>
                     <tr>
-                        <th>{{__("Active")}}</th><td>{{getStatus($Contactu->is_active,["Yes","No"])}}</td>
+                        <th>{{__("Active")}}</th><td>{{getStatus($Contactu->active,["Yes","No"])}}</td>
                     </tr>
                     <tr>
                         <th>{{__("Created At")}}</th><td>{{$Contactu->created_at}}

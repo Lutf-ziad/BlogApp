@@ -43,12 +43,18 @@ img {
 .image img:hover {
     opacity: 0.8;
 }
-
+.btn {
+    width: 100%;
+    margin-bottom: 4px;
+ }
 </style>
-@section('content')
-<div class="product-gallery">
 
-    @if($message = Session::get('success'))
+<!-- Add more images as needed -->
+</div>
+@section('content')
+<div class="container">
+ <div class="product-gallery">
+                @if($message = Session::get('success'))
                     <div class="alert alert-success" role="alert" >
                         <strong>{{ $message }}</strong>
                     </div>
@@ -59,7 +65,21 @@ img {
                        </div>
                      @endforeach
                   @endif
-
+                   @foreach($product->images  as $imgs)
+                      </form>
+                      <div class="image">
+                           <img src="{{ asset('images/' . $imgs)}}">
+                       </div>
+                       <div class="card-body">
+                        <a href="" class="btn btn-primary">Edit</a>
+                       <form action=" " method="POST">
+                           @csrf
+                           @method('DELETE')
+                           <button type="submit" class="btn btn-danger">Delete</button>
+                       </form>
+                            <span class="badge badge-success">Highlighted</span>
+                    </div>
+                     @endforeach
                   <form action="{{ route('image.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
@@ -76,5 +96,6 @@ img {
 
     <!-- Add more images as needed -->
 </div>
+ </div>
 @endsection
 

@@ -75,7 +75,6 @@ class BlogController extends Controller
 
     public function update(UpdateBlogRequest $request, Blog $Blog)
     {
-
         try {
                 $data = $request->validated();
 

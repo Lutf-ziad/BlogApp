@@ -53,13 +53,14 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-         $Blogs = Category::select('id', 'name')->get();
+         $Catgry = Category::select('id', 'name')->get();
 
-        return view('admins.admin.product.edit', compact('product', 'Blogs'));
+        return view('admins.admin.product.edit', compact('product', 'Catgry'));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
     {
+
         try {
 
             if ($product->update($request->validated())) {

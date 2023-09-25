@@ -14,6 +14,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>email</th>
+                            <th>phone</th>
                             <th>Describe</th>
                             <th>Active</th>
                             <th>Actions</th>
@@ -28,7 +29,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $Contactu->name }}</td>
                                 <td>{{ $Contactu->email }}</td>
-                                <td>{{ $Contactu->desc }}</td>
+                                <td>{{ $Contactu->phone }}</td>
+                                <td>{{ substr($Contactu->desc , 0, 50) }}</td>
                                 <td>{{ getStatus($Contactu->active) }}</td>
                                 <td class="text-center">
                                     <x-buttons.btn-show route="Contactu.show" :id="$Contactu" />

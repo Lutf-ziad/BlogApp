@@ -23,7 +23,7 @@ Route::middleware(['AdminAuth'])->group(function () {
 
     // end route categories
     Route::controller(ImageController::class)->group(function(){
-        Route::get('image-upload/{id}','index')->name('image.index');
+        Route::get('image-upload/{id}','show')->name('image.index');
         Route::post('image-upload','imageUpload')->name('image.store');
     });
 

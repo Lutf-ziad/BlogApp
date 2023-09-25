@@ -27,8 +27,8 @@
                             data-placement="top"
                             title="@if ($Blog->deleted_at) {{ __('This Record is Trashed') }} @endif">
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $Blog->name }}</td>
-                            <td>{{ $Blog->descrption }}</td>
+                            <td>{{ substr( $Blog->name , 0, 20)}}</td>
+                            <td>{{ substr($Blog->descrption , 0, 30)}}</td>
                             <td>
                                 <div class="col-3 p-md-0">
                                     <img class="img-circle img-thumbnail float-right" width="50" height="50" src={{asset('uploads/blog/' . $Blog->picture)}}                                 </div>

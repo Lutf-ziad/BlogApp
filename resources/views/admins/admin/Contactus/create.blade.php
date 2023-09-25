@@ -15,6 +15,9 @@
                         <x-inputs.text-input label="Name" name="name" />
                     </div>
                     <div class="col-md-3 col-sm-6">
+                        <x-inputs.text-input type="number" label="Phone" name="phone" />
+                    </div>
+                    <div class="col-md-3 col-sm-6">
                         <x-inputs.text-input type="text" label="Email" name="email" required="0" />
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -23,7 +26,6 @@
                     <div class="col-md-3 col-6">
                         <x-inputs.checkbox-input label="Active" name="active" value="1" />
                     </div>
-
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="form-group">

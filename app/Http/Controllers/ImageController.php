@@ -11,13 +11,13 @@ use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
-    public function index($id)
+    public function show($id)
     {
-        $product = Product::with('images')->find($id);
+        $product = Product::find($id);
         return view('admins.admin.product.imag',compact('product'));
     }
 
-    public function imageUpload(Request $request): RedirectResponse
+    public function imageUpload(Request $request)
     {
         $request->validate([
             'image.*' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:5120',

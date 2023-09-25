@@ -19,10 +19,13 @@
                         <x-inputs.text-input label="email" name="email" :value="$Contactu->email" />
                     </div>
                     <div class="col-md-3 col-sm-6">
+                        <x-inputs.text-input label="phone" name="phone" :value="$Contactu->phone" />
+                    </div>
+                    <div class="col-md-3 col-sm-6">
                         <x-inputs.text-input label="Describe" name="desc" :value="$Contactu->desc" />
                     </div>
                     <div class="col-md-3 col-6">
-                        <x-inputs.checkbox-input label="Active" name="active" :value="$Contactu->is_active" />
+                        <x-inputs.checkbox-input label="Active" name="active" :value="$Contactu->active" />
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>

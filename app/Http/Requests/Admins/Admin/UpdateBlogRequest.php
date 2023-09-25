@@ -24,10 +24,10 @@ class UpdateBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'min:3', 'max:255'],
-            'desc' => ['required', 'min:3', 'max:255'],
-            'picture' => ['nullable', 'image', 'mimes:'.config('app.ALLOED_IMAGE_EXTENSIONS'), 'max:'.config('app.ALLOED_IMAGE_SIZE')],
-            'active' => ['required', 'integer', 'in:0,1'],
+            'name'    => ['required', 'min:3', 'max:255'],
+            'descrption'    => ['required','max:1000'],
+            'image' => ['nullable', 'image', 'mimes:'.config('app.ALLOED_IMAGE_EXTENSIONS'), 'max:'.config('app.ALLOED_IMAGE_SIZE')],
+            'active'  => ['required', 'integer', 'in:0,1'],
         ];
     }
 }
